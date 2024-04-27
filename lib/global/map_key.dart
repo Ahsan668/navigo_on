@@ -1,1 +1,2 @@
-String mapKey = "AIzaSyBPdpXZqLmNIN8JlyuCKtIJuKTxtoQmAz0";
+//firebase web api token
+String mapKey = "";
