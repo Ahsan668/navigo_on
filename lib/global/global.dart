@@ -9,7 +9,8 @@ User? currentUser;
 
 UserModel? userModelCurrentInfo;
 
-String cloudMessagingServerToken = "key=AAAAsSNhq_g:APA91bGtfDynUNJH41Hzjpnm0BbsgKM5VOk9G_XULMRcDyTqwUXWpCxZac6Fmsd8z0EcjZfEWXpyMHF-0om1xqY1_ZAVKzuk2KDXY1nqABM7Cz-Aotj7pNLla8HlfyNUwEGPK8lhy-K3";
+//firebase messaging server_token_url
+String cloudMessagingServerToken = "key=";
 
 List driversList = [];
 DirectionDetailsInfo? tripDirectionDetailsInfo;
