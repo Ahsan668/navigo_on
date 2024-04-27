@@ -16,7 +16,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final _formKey = GlobalKey<FormState>();
 
   final emailTextEditingController = TextEditingController();
-
+  
+  //eforgot password verification email
   void _submit(){
   firebaseAuth.sendPasswordResetEmail(email: emailTextEditingController.text.trim())
   .then((value) {
