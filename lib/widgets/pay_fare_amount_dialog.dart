@@ -54,7 +54,7 @@ class _PayFareAmountDialogState extends State<PayFareAmountDialog> {
             SizedBox(height: 10,),
 
             Text(
-              "৳ "+widget.fareAmount.toString(),
+              "Rs "+widget.fareAmount.toString(),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: darkTheme ? Colors.amber.shade400 : Colors.white,
