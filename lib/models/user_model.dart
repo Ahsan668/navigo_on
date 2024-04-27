@@ -16,13 +16,6 @@ class UserModel{
     this.address,
 });
 
-  UserModel.fromSnapshot(DataSnapshot snap){
-    phone = (snap.value as dynamic)["phone"];
-    name = (snap.value as dynamic)["name"];
-    id = (snap.value as dynamic)["id"];
-    email = (snap.value as dynamic)["email"];
-    address = (snap.value as dynamic)["address"];
-  }
   UserModel.fromDocument(DocumentSnapshot snap){
     phone = (snap as dynamic)["phone"];
     name = (snap as dynamic)["name"];
