@@ -10,6 +10,7 @@ import '../infoHandler/info_handler.dart';
 import '../models/directions.dart';
 import '../models/places_predicted.dart';
 
+//place prediction tiles on search
 class PlacePredictionTileDesign extends StatefulWidget {
 
   final PredictedPlaces? predictedPlaces;
@@ -35,11 +36,11 @@ class _PlacePredictionTileDesignState extends State<PlacePredictionTileDesign> {
     var responseApi = await RequestAssistant.receiveRequest(placeDirectionDetailsUrl);
 
     Navigator.pop(context);
-
+    //response failed
     if(responseApi == "Error Occured. Failed. No Response."){
       return;
     }
-
+    //response successfull
     if(responseApi["status"] == "OK"){
       Directions directions = Directions();
       directions.locationName = responseApi["result"]["name"];
