@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:geolocator/geolocator.dart';
-//import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:navigo_on/Assistants/request_assistant.dart';
 import 'package:navigo_on/global/global.dart';
@@ -17,7 +16,8 @@ import '../models/directions.dart';
 import '../models/trips_history_model.dart';
 
 class AssistantMethods {
-
+  
+  //current_user_info
   static void readCurrentOnlineUserInfo() async {
     currentUser = firebaseAuth.currentUser;
     CollectionReference userRef = FirebaseFirestore.instance.collection("users");
@@ -28,6 +28,7 @@ class AssistantMethods {
     });
   }
 
+  //search address for geographic location
   static Future<String> searchAddressForGeographicCoOrdinates(Position position, context) async {
 
     String apiUrl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.latitude},${position.longitude}&key=$mapKey";
@@ -48,15 +49,12 @@ class AssistantMethods {
 
     return humanReadableAddress;
   }
-
+  
+//origin to destination details
   static Future<DirectionDetailsInfo> obtainOriginToDestinationDirectionDetails(LatLng originPosition, LatLng destinationPosition) async {
 
     String urlOriginToDestinationDirectionDetails = "https://maps.googleapis.com/maps/api/directions/json?origin=${originPosition.latitude},${originPosition.longitude}&destination=${destinationPosition.latitude},${destinationPosition.longitude}&key=$mapKey";
     var responseDirectionApi = await RequestAssistant.receiveRequest(urlOriginToDestinationDirectionDetails);
-
-    // if(responseDirectionApi == "Error Occured. Failed. No Response."){
-    //   return "";
-    // }
 
     DirectionDetailsInfo directionDetailsInfo = DirectionDetailsInfo();
     directionDetailsInfo.e_points = responseDirectionApi["routes"][0]["overview_polyline"]["points"];
@@ -70,6 +68,7 @@ class AssistantMethods {
     return directionDetailsInfo;
   }
 
+  //fare calculation from origin to destination
   static double calculateFareAmountFromOriginToDestination(DirectionDetailsInfo directionDetailsInfo){
     double timeTraveledFareAmountPerMinute = (directionDetailsInfo.duration_value! /60) * 0.1;
     double distanceTraveledFareAmountPerKilometer = (directionDetailsInfo.duration_value! / 1000) * 0.1;
