@@ -17,7 +17,7 @@ Here are some screenshots of the app:
 ![Sign Up](screenshots/Signup.png)
 ![Driver_Search](screenshots/driver_search.png)
 ![Home](screenshots/homepage.png)
-![Profile](screenshots/profilescreen.png)
+![Profile](screenshots/profile.png)
 *Navigation*
 
 ## Installation
