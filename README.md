@@ -1,7 +1,5 @@
 # Navigo On Drivers
 
-![Navigo On Drivers](https://your-image-url.com/navigo_on_drivers_banner.png)
-
 Navigo On Drivers is a Flutter-based mobile application similar to Uber, designed specifically for drivers. This app allows drivers to receive ride requests, navigate to pick-up locations, and track their earnings. It integrates with Firebase for backend services including authentication, real-time database, and cloud functions.
 
 ## Features
